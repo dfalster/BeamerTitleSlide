@@ -7,6 +7,27 @@
 }
 
 
+\title[] % (optional, use only with long paper titles)
+{An evolutionary model of plant succession}
+% \subtitle
+% {Include Only If Paper Has a Subtitle}
+
+\author[Falster, Falster]
+{
+  Daniel~Falster\inst{1} \and
+  \textcolor{green!50!black}{Daniel~Falster}\inst{2}
+}
+
+\institute[Macquarie University, latex land and others]
+{
+  \inst{1}%
+  Macquarie University, Australia
+  \and
+  \vskip-2mm
+  \inst{2}%
+  latex land, Earth
+}
+
 
 % Includes for frame package
 \usepackage{framed,color}
@@ -37,8 +58,10 @@ outerlinecolor=black,innertopmargin=2pt,%
 splittopskip=\topskip,skipbelow=\baselineskip,%
 skipabove=\baselineskip]{titleBox}
 
-\newmdenv[tikzsetting={draw=black,fill=white,fill opacity=0.7, line width=4pt},backgroundcolor=none,leftmargin=0,rightmargin=40,innertopmargin=4pt]{transparentTitleBox}
+\newmdenv[tikzsetting={draw=black,fill=white,fill opacity=0.7, line width=4pt},backgroundcolor=none,leftmargin=0,rightmargin=40,innertopmargin=4pt,skipbelow=\baselineskip,%
+skipabove=\baselineskip]{transparentTitleBox}
 %http://tex.stackexchange.com/questions/38281/transparent-background-for-mdframed-environment
+
 
 %----------------------------------------------------------------------------------------
 \begin{document}
@@ -68,13 +91,33 @@ skipabove=\baselineskip]{titleBox}
   \end{frame}
 }
 
+{% Example using built-in title functions
+  \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{images/Background.jpg}}
+  \begin{frame}[plain] 
+
+  \begin{transparentTitleBox}
+  \maketitle  
+  \end{transparentTitleBox}
+
+  \end{frame}
+}
+
 {%title with image as background
   \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{images/Background.jpg}}
   \begin{frame}[plain] 
 
   \begin{transparentTitleBox}
-  {\huge transparent mdframed?}
+  {\huge \inserttitle}
   \end{transparentTitleBox}
+
+   \begin{transparentTitleBox}
+   {\tiny
+    \insertauthor \\[\baselineskip]
+%    \insertshortauthor \\[\baselineskip]
+%    \insertshortinstitute
+     \insertinstitute   
+    }
+   \end{transparentTitleBox}
 
   \end{frame}
 }
