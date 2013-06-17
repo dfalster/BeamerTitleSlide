@@ -14,18 +14,12 @@
 
 \author[Falster, Falster]
 {
-  Daniel~Falster\inst{1} \and
-  \textcolor{green!50!black}{Daniel~Falster}\inst{2}
+  Daniel~Falster
 }
 
-\institute[Macquarie University, latex land and others]
+\institute[]
 {
-  \inst{1}%
   Macquarie University, Australia
-  \and
-  \vskip-2mm
-  \inst{2}%
-  latex land, Earth
 }
 
 
@@ -62,8 +56,8 @@ skipabove=\baselineskip]{TitleBox}
 %----------------------------------------------------------------------------------------
 \begin{document}
 
-{% My fancy title page, using transparent text box from mdframe, and icons from fontawesome
-  \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{images/Background.jpg}}
+% My fancy title page, using transparent text box from mdframe, and icons from fontawesome
+{  \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{images/Background.jpg}}
   \begin{frame}[plain] 
 
   \vspace{15em}
@@ -81,8 +75,13 @@ skipabove=\baselineskip]{TitleBox}
   \end{frame}
 }
 
+%default beamer option
+\begin{frame}
+  \titlepage
+\end{frame}
 
-{% 
+%Framed text examples
+{
   \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{images/Background.jpg}}
   \begin{frame}[plain] 
 
@@ -110,8 +109,9 @@ skipabove=\baselineskip]
   \end{frame}
 }
 
-{% Example using built-in title functions
-  \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{images/Background.jpg}}
+% Example using built-in title functions
+{
+ \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{images/Background.jpg}}
   \begin{frame}[plain] 
 
   \begin{TitleBox}
@@ -120,26 +120,6 @@ skipabove=\baselineskip]
 
   \end{frame}
 }
-
-{%title with image as background
-  \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{images/Background.jpg}}
-  \begin{frame}[plain] 
-
-  \begin{TitleBox}
-  {\huge \inserttitle}
-  \end{TitleBox}
-
-   \begin{TitleBox}
-    \insertauthor \\[\baselineskip]
-%    \insertshortauthor \\[\baselineskip]
-%    \insertshortinstitute
-     \insertinstitute   
-   \end{TitleBox}
-
-  \end{frame}
-}
-
-
 
 
 %-----------------------------------
